@@ -1,199 +1,424 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Portfolio</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.24.2/dist/css/uikit.min.css" />
-        
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathaniel Adam King - IT Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .font-mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="border-b border-gray-200 sticky top-0 bg-white z-50">
+        <nav class="max-w-6xl mx-auto px-6 py-6">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-semibold font-mono">YOUR NAME</div>
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a></li>
+                    <li><a href="#experience" class="text-gray-600 hover:text-primary transition-colors">Experience</a></li>
+                    <li><a href="#projects" class="text-gray-600 hover:text-primary transition-colors">Projects</a></li>
+                    <li><a href="#skills" class="text-gray-600 hover:text-primary transition-colors">Skills</a></li>
+                    <li><a href="#certifications" class="text-gray-600 hover:text-primary transition-colors">Certifications</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.24.2/dist/js/uikit.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.24.2/dist/js/uikit-icons.min.js"></script>
-        <script src="https://kit.fontawesome.com/fd4032eb1d.js" crossorigin="anonymous"></script>        
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-
-
-
-        <div uk-sticky>
-            <a class="uk-button uk-button-default uk-margin-small-left uk-margin-small-top" href="#modal-full" uk-toggle="target: #modal-full; animation: uk-animation-kenburns" uk-icon="icon: menu"></a>
-
-            <div id="modal-full" class="uk-modal-full" uk-modal>
-                <div class="uk-modal-dialog">
-                    <a class="uk-button uk-button-default uk-margin-small-left uk-margin-small-top" href="#modal-full" uk-toggle uk-toggle uk-icon="icon: close"></a>
-                    <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle uk-grid-medium" uk-grid>
-                        <div class="uk-padding-large">
-                            <ul class="uk-nav-primary" uk-nav>
-                                <li><a href="#about"><h1 class="uk-heading-large text-primary">About</h1></a></li>
-                                <li><a href="#education"><h1 class="uk-heading-large text-primary">Education</h1></a></li>
-                                <li><a href="#projects"><h1 class="uk-heading-large text-primary">Projects</h1></a></li>
-                                <li><a href="#contact"><h1 class="uk-heading-large text-primary">Contact</h1></a></li>
-                            </ul>
-                        </div>           
-                        <div uk-height-viewport></div>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="max-w-3xl">
+            <div class="text-sm font-mono text-primary mb-4">IT PROFESSIONAL</div>
+            <h1 class="text-5xl font-bold mb-6 leading-tight">Data Center Technician & Cloud Infrastructure Specialist</h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                Currently working as a Data Center Technician 2, pursuing Cloud and Network Engineering. 
+                Experienced in infrastructure management, cloud platforms, and modern development practices. 
+                Focused on bridging operations and development to build scalable, reliable systems.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#contact" class="bg-primary text-white px-6 py-3 hover:bg-blue-700 transition-colors">
+                    Get in Touch
+                </a>
+                <a href="#projects" class="border border-gray-300 px-6 py-3 hover:border-primary hover:text-primary transition-colors">
+                    View Work
+                </a>
             </div>
         </div>
+    </section>
 
-        <section id="about" class="uk-section uk-section-large uk-section-default uk-height-viewport">
-            <div class="uk-container uk-container-large uk-text-center">
-                <div>
-                    <div uk-grid uk-height-match="row: false" uk-scrollspy="cls: uk-animation-fade; target: h1, p; delay: 300; repeat: true">
-                        <div class="uk-width-auto@m"><h1 class="uk-heading-2xlarge text-primary uk-tile uk-padding-remove-left">Nathaniel Adam King</h1></div>
-                        <div class="uk-divider-vertical uk-width-auto@m"></div>
-                        <div class="uk-width-expand@m"><p class="uk-text-justify text-normal uk-text-large">Versatile and highly certified IT professional with a background in datacenter operations and a strong foundation in general technical support principles. Proven expertise in diagnosing and resolving complex hardware, software, and network connectivity issues, ensuring maximum uptime and efficiency. Possessing a comprehensive certification portfolio including CompTIA A+, Microsoft Azure Fundamentals, AWS Foundations, ITIL 4, and LPI certifications, demonstrating a commitment to industry best practices and a broad technical skill set. Eager to leverage hands-on troubleshooting abilities and cloud knowledge to excel in a dynamic technical support or technician role.
-                        </p></div>
-                    </div>
-                </div>
-                
-            </div>	
-        </section>
-
-
-        <section id="education" class="uk-section uk-section-large uk-section-secondary uk-height-viewport">	
-            <div class="uk-container uk-container-large uk-text-center">
-
-                <div><h1 class="uk-heading-2xlarge uk-margin-large text-primary">Education</h1></div>
-
-                <div class="uk-grid-large uk-child-width-expand@s" uk-grid>
-                    <div class="uk-align-left">
-                        <div class="uk-card uk-card-small uk-card-body uk-card-secondary uk-card-hover"  uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
-                            <div class="uk-card-header uk-width-expand uk-text-left">
-                                        <h3 class="uk-card-title uk-margin-remove-bottom text-secondary">Bachelor of Science | Cloud and Network Engineering</h3>
-                                        <p class="uk-text-meta uk-margin-remove-top"><time datetime="2023-09">Sep 2023</time>-<time datetime="present">present</time></p>
-                                        <p class="uk-text-secondary">Western Governor's University | Salt Lake City, Utah</p>
-                            </div>
-                        </div>
-                    </div>			
-                    <div class="uk-align-right">
-                        <div class="uk-card uk-card-small uk-card-body uk-card-secondary uk-card-hover"  uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
-                            <div class="uk-card-header uk-width-expand uk-text-left">
-                                        <h3 class="uk-card-title uk-margin-remove-bottom text-secondary">Associate of Arts | Psychology</h3>
-                                        <p class="uk-text-meta uk-margin-remove-top"><time datetime="2000-01">Jan 2000</time>-<time datetime="2001-07">Jul 2001</time></p>
-                                        <p class="text-secondary">Trinity Valley Community College | Athens, Texas</p>
-                            </div>
-                        </div>
-                    </div>			
-
-                </div>
-                
-                <hr class="uk-divider-icon uk-margin-large">
-
-                <div><h1 class="uk-heading-2xlarge uk-margin-large text-primary">Certifications</h1></div>
-
-                <div class="uk-grid-large uk-child-width-expand@s uk-text-center" uk-grid uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 300; repeat: true">
-                    <div>
-                        <div class="uk-card uk-card-secondary uk-card-hover">
-                            <div class="uk-card-media-top">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 640 640"><path fill="#bdbdbd" d="M349.5 115.7C344.6 103.8 332.9 96 320 96C307.1 96 295.4 103.8 290.5 115.7C197.2 339.7 143.8 467.7 130.5 499.7C123.7 516 131.4 534.7 147.7 541.5C164 548.3 182.7 540.6 189.5 524.3L221.3 448L418.6 448L450.4 524.3C457.2 540.6 475.9 548.3 492.2 541.5C508.5 534.7 516.2 516 509.4 499.7C496.1 467.7 442.7 339.7 349.4 115.7zM392 384L248 384L320 211.2L392 384z"/></svg>	
-                            </div>
-                            <div class="uk-card-body">
-                                <h3 class="uk-card-title text-secondary">CompTIA A+</h3>					
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-secondary uk-card-hover">
-                            <div class="uk-card-media-top">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 640 640"><path fill="#bdbdbd" d="M271.2 56C265.1 49.8 256.2 47.3 247.8 49.6C239.4 51.9 232.9 58.4 230.8 66.8L215.5 127C214.4 131.4 209.9 134 205.6 132.7L145.8 115.9C137.4 113.5 128.4 115.9 122.3 122C116.2 128.1 113.8 137.1 116.2 145.5L133.1 205.3C134.3 209.6 131.7 214.1 127.4 215.2L67.1 230.5C58.7 232.6 52.1 239.2 49.8 247.6C47.5 256 50 264.9 56.2 271L100.7 314.3C103.9 317.4 103.9 322.6 100.7 325.8L56.3 369.1C50.1 375.2 47.6 384.1 49.9 392.5C52.2 400.9 58.8 407.4 67.2 409.6L127.4 424.9C131.8 426 134.4 430.5 133.1 434.8L116.2 494.5C113.8 502.9 116.2 511.9 122.3 518C128.4 524.1 137.4 526.5 145.8 524.1L205.6 507.2C209.9 506 214.4 508.6 215.5 512.9L230.8 573.1C232.9 581.5 239.5 588.1 247.9 590.4C256.3 592.7 265.2 590.2 271.3 584L314.6 539.5C317.7 536.3 322.9 536.3 326.1 539.5L369.3 584C375.4 590.2 384.3 592.7 392.7 590.4C401.1 588.1 407.6 581.5 409.8 573.1L425.1 513C426.2 508.6 430.7 506 435 507.3L494.8 524.2C503.2 526.6 512.2 524.2 518.3 518.1C524.4 512 526.8 503 524.4 494.6L507.5 434.8C506.3 430.5 508.9 426 513.2 424.9L573.4 409.6C581.8 407.5 588.4 400.9 590.7 392.5C593 384.1 590.5 375.1 584.3 369.1L539.8 325.8C536.6 322.7 536.6 317.5 539.8 314.3L584.3 271C590.5 264.9 593 256 590.7 247.6C588.4 239.2 581.8 232.7 573.4 230.5L513.2 215.2C508.8 214.1 506.2 209.6 507.5 205.3L524.4 145.5C526.8 137.1 524.4 128.1 518.3 122C512.2 115.9 503.2 113.5 494.8 115.9L435 132.8C430.7 134 426.2 131.4 425.1 127.1L409.8 66.8C407.7 58.4 401.1 51.8 392.7 49.5C384.3 47.2 375.4 49.7 369.3 55.9L326 100.5C322.9 103.7 317.7 103.7 314.5 100.5L271.2 56z"/></svg>
-                            </div>
-                            <div class="uk-card-body">
-                                <h3 class="uk-card-title text-secondary">ITIL4</h3>					
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-secondary uk-card-hover">
-                            <div class="uk-card-media-top">
-                                <span uk-icon="icon: microsoft; ratio: 3.5"></span>
-                            </div>
-                            <div class="uk-card-body">
-                                <h3 class="uk-card-title text-secondary">Microsoft Certified: Azure Fundamentals</h3>					
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-secondary uk-card-hover">
-                            <div class="uk-card-media-top">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 640 640"><path fill="#bdbdbd" d="M180.4 267C179.7 289.6 191 299.7 191.3 306C191.2 307.3 190.7 308.5 190 309.6C189.3 310.7 188.3 311.6 187.2 312.2L174.4 321.2C172.7 322.4 170.8 323 168.8 323.1C168.4 323.1 160.6 324.9 148.3 297.5C140.8 306.9 131.3 314.4 120.4 319.5C109.5 324.6 97.7 327.2 85.7 327C69.4 327.9 25.3 317.8 27.6 270.8C26 232.5 61.7 208.7 98.5 210.8C105.6 210.8 120.1 211.2 145.5 217.1L145.5 201.5C148.2 175 130.8 154.5 100.7 157.6C98.3 157.6 81.3 157.1 54.9 167.7C47.5 171.1 46.6 170.5 44.1 170.5C36.7 170.5 39.7 149 41.2 146.3C46.4 139.9 77.1 127.9 107.1 128.1C127.2 126.3 147.2 132.5 162.8 145.4C169.1 152.5 174 160.8 177 169.8C180 178.8 181.2 188.3 180.5 197.8L180.5 267.1zM94 299.4C126.4 298.9 140.2 279.4 143.3 268.9C145.8 258.8 145.4 252.5 145.4 241.5C135.7 239.2 121.8 236.6 105.8 236.6C90.6 235.5 63 242.2 64.1 268.9C62.9 285.7 75.2 300.3 94.1 299.4zM264.9 322.5C257 323.2 253.4 317.6 252.2 312.1L202.4 147.4C201.4 144.6 200.8 141.8 200.5 138.8C200.3 137.6 200.6 136.4 201.3 135.4C202 134.4 203.1 133.8 204.3 133.6C204.5 133.6 202.2 133.6 226.5 133.6C235.3 132.7 238.1 139.6 239.1 144L274.9 284.8L308.1 144C308.6 140.8 311 132.9 320.9 133.8L338.1 133.8C340.3 133.6 349.2 133.3 350.8 144.2L384.1 286.7L421 144.1C421.5 141.9 423.7 132.7 433.7 133.7L453.4 133.7C454.3 133.6 459.6 132.9 458.7 142.3C458.3 144.1 462.1 131.6 405.9 312.2C404.8 317.7 401.1 323.3 393.2 322.6L374.5 322.6C363.6 323.8 362 312.9 361.8 311.9L328.6 174.8L295.8 311.8C295.6 312.9 294.1 323.7 283.1 322.5L264.8 322.5L264.8 322.5zM538.4 328.1C532.5 328.1 504.5 327.8 481 315.8C478.7 314.8 476.7 313.2 475.3 311C473.9 308.8 473.2 306.4 473.2 303.9L473.2 293.2C473.2 284.7 479.4 286.3 482 287.3C492 291.4 498.5 294.4 510.8 296.9C547.5 304.4 563.6 294.6 567.5 292.4C580.7 284.6 581.7 266.7 572.8 257.5C562.3 248.7 557.3 248.4 519.7 236.5C515.1 235.2 476 222.9 475.9 184.1C475.3 155.9 500.9 127.9 545.4 128.1C558.1 128.1 591.8 132.2 601 143.7C602.4 145.8 603 148.3 602.9 150.7L602.9 160.8C602.9 165.2 601.3 167.5 598 167.5C590.3 166.6 576.6 156.3 548.8 156.7C541.9 156.3 508.9 157.6 510.4 181.7C510 200.7 537 207.8 540.1 208.6C576.6 219.6 588.7 221.4 603.2 238.2C620.3 260.4 611.1 286.5 607.5 293.6C588.4 331.1 539.1 328 538.2 328zM578.6 433C508.6 484.7 406.9 512.2 320.1 512.2C203 513 89.8 469.9 2.8 391.5C-3.7 385.6 2 377.5 10 382C106.5 437.2 215.7 466.2 326.9 466.1C409.9 465.7 492 448.8 568.5 416.6C580.3 411.6 590.3 424.4 578.6 433zM607.8 399.7C598.8 388.2 548.5 394.3 526 397C519.2 397.8 518.1 391.9 524.2 387.5C564.3 359.3 630.1 367.4 637.6 376.9C645.1 386.4 635.5 452.3 598 483.8C592.2 488.7 586.7 486.1 589.3 479.7C597.7 458.4 616.7 411.2 607.7 399.7z"/></svg>
-                            </div>						
-                            <div class="uk-card-body">
-                                <h3 class="uk-card-title text-secondary">AWS Certified Cloud Practitioner</h3>					
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="uk-card uk-card-secondary uk-card-hover">
-                            <div class="uk-card-media-top">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 640 640"><path fill="#bdbdbd" d="M316.9 187.3C317.9 187.8 318.7 189 319.9 189C321 189 322.7 188.6 322.8 187.5C323 186.1 320.9 185.2 319.6 184.6C317.9 183.9 315.7 183.6 314.1 184.5C313.7 184.7 313.3 185.2 313.5 185.6C313.8 186.9 315.8 186.7 316.9 187.3zM295 189C296.2 189 297 187.8 298 187.3C299.1 186.7 301.1 186.9 301.5 185.7C301.7 185.3 301.3 184.8 300.9 184.6C299.3 183.7 297.1 184 295.4 184.7C294.1 185.3 292 186.2 292.2 187.6C292.3 188.6 294 189.1 295 189zM516 467.8C512.4 463.8 510.7 456.2 508.8 448.1C507 440 504.9 431.3 498.3 425.7C497 424.6 495.7 423.6 494.3 422.8C493 422 491.6 421.3 490.2 420.8C499.4 393.5 495.8 366.3 486.5 341.7C475.1 311.6 455.2 285.3 440 267.3C422.9 245.8 406.3 225.4 406.6 195.3C407.1 149.4 411.7 64.1 330.8 64C228.4 63.8 254 167.4 252.9 199.2C251.2 222.6 246.5 241 230.4 263.9C211.5 286.4 184.9 322.7 172.3 360.6C166.3 378.5 163.5 396.7 166.1 413.9C159.6 419.7 154.7 428.6 149.5 434.1C145.3 438.4 139.2 440 132.5 442.4C125.8 444.8 118.5 448.4 114 456.9C111.9 460.8 111.2 465 111.2 469.3C111.2 473.2 111.8 477.2 112.4 481.1C113.6 489.2 114.9 496.8 113.2 501.9C108 516.3 107.3 526.3 111 533.6C114.8 540.9 122.4 544.1 131.1 545.9C148.4 549.5 171.9 548.6 190.4 558.4C210.2 568.8 230.3 572.5 246.3 568.8C257.9 566.2 267.4 559.2 272.2 548.6C284.7 548.5 298.5 543.2 320.5 542C335.4 540.8 354.1 547.3 375.6 546.1C376.2 548.4 377 550.7 378.1 552.8L378.1 552.9C386.4 569.6 401.9 577.2 418.4 575.9C435 574.6 452.5 564.9 466.7 548C480.3 531.6 502.7 524.8 517.6 515.8C525 511.3 531 505.7 531.5 497.5C531.9 489.3 527.1 480.2 516 467.8zM319.8 151.3C329.6 129.1 354 129.5 363.8 150.9C370.3 165.1 367.4 181.8 359.5 191.3C357.9 190.5 353.6 188.7 346.9 186.4C348 185.2 350 183.7 350.8 181.8C355.6 170 350.6 154.8 341.7 154.5C334.4 154 327.8 165.3 329.9 177.5C325.8 175.5 320.5 174 316.9 173.1C315.9 166.2 316.6 158.5 319.8 151.3zM279.1 139.8C289.2 139.8 299.9 154 298.2 173.3C294.7 174.3 291.1 175.8 288 177.9C289.2 169 284.7 157.8 278.4 158.3C270 159 268.6 179.5 276.6 186.4C277.6 187.2 278.5 186.2 270.7 191.9C255.1 177.3 260.2 139.8 279.1 139.8zM265.5 200.5C271.7 195.9 279.1 190.5 279.6 190C284.3 185.6 293.1 175.8 307.5 175.8C314.6 175.8 323.1 178.1 333.4 184.7C339.7 188.8 344.7 189.1 356 194C364.4 197.5 369.7 203.7 366.5 212.2C363.9 219.3 355.5 226.6 343.8 230.3C332.7 233.9 324 246.3 305.6 245.2C301.7 245 298.6 244.2 296 243.1C288 239.6 283.8 232.7 276 228.1C267.4 223.3 262.8 217.7 261.3 212.8C259.9 207.9 261.3 203.8 265.5 200.5zM268.8 534.5C266.1 569.6 224.9 568.9 193.5 552.5C163.6 536.7 124.9 546 117 530.6C114.6 525.9 114.6 517.9 119.6 504.2L119.6 504C122 496.4 120.2 488 119 480.1C117.8 472.3 117.2 465.1 119.9 460.1C123.4 453.4 128.4 451 134.7 448.8C145 445.1 146.5 445.4 154.3 438.9C159.8 433.2 163.8 426 168.6 420.9C173.7 415.4 178.6 412.8 186.3 414C194.4 415.2 201.4 420.8 208.2 430L227.8 465.6C237.3 485.5 270.9 514 268.8 534.5zM267.4 508.6C263.3 502 257.8 495 253 489C260.1 489 267.2 486.8 269.7 480.1C272 473.9 269.7 465.2 262.3 455.2C248.8 437 224 422.7 224 422.7C210.5 414.3 202.9 404 199.4 392.8C195.9 381.6 196.4 369.5 199.1 357.6C204.3 334.7 217.7 312.4 226.3 298.4C228.6 296.7 227.1 301.6 217.6 319.2C209.1 335.3 193.2 372.5 215 401.6C215.6 380.9 220.5 359.8 228.8 340.1C240.8 312.7 266.1 265.2 268.1 227.4C269.2 228.2 272.7 230.6 274.3 231.5C278.9 234.2 282.4 238.2 286.9 241.8C299.3 251.8 315.4 251 329.3 243C335.5 239.5 340.5 235.5 345.2 234C355.1 230.9 363 225.4 367.5 219C375.2 249.4 393.2 293.3 404.7 314.7C410.8 326.1 423 350.2 428.3 379.3C431.6 379.2 435.3 379.7 439.2 380.7C453 345 427.5 306.5 415.9 295.8C411.2 291.2 411 289.2 413.3 289.3C425.9 300.5 442.5 323 448.5 348.3C451.3 359.9 451.8 372 448.9 384C465.3 390.8 484.8 401.9 479.6 418.8C477.4 418.7 476.4 418.8 475.4 418.8C478.6 408.7 471.5 401.2 452.6 392.7C433 384.1 416.6 384.1 414.3 405.2C402.2 409.4 396 419.9 392.9 432.5C390.1 443.7 389.3 457.2 388.5 472.4C388 480.1 384.9 490.4 381.7 501.4C349.6 524.3 305 534.3 267.4 508.6zM524.8 497.1C523.9 513.9 483.6 517 461.6 543.6C448.4 559.3 432.2 568 418 569.1C403.8 570.2 391.5 564.3 384.3 549.8C379.6 538.7 381.9 526.7 385.4 513.5C389.1 499.3 394.6 484.7 395.3 472.9C396.1 457.7 397 444.4 399.5 434.2C402.1 423.9 406.1 417 413.2 413.1C413.5 412.9 413.9 412.8 414.2 412.6C415 425.8 421.5 439.2 433 442.1C445.6 445.4 463.7 434.6 471.4 425.8C480.4 425.5 487.1 424.9 494 430.9C503.9 439.4 501.1 461.2 511.1 472.5C521.7 484.1 525.1 492 524.8 497.1zM269.4 212.7C271.4 214.6 274.1 217.2 277.4 219.8C284 225 293.2 230.4 304.7 230.4C316.3 230.4 327.2 224.5 336.5 219.6C341.4 217 347.4 212.6 351.3 209.2C355.2 205.8 357.2 202.9 354.4 202.6C351.6 202.3 351.8 205.2 348.4 207.7C344 210.9 338.7 215.1 334.5 217.5C327.1 221.7 315 227.7 304.6 227.7C294.2 227.7 285.9 222.9 279.7 218C276.6 215.5 274 213 272 211.1C270.5 209.7 270.1 206.5 267.7 206.2C266.3 206.1 265.9 209.9 269.4 212.7z"/></svg>
-                            </div>
-                            <div class="uk-card-body">
-                                <h3 class="uk-card-title text-secondary">LPI</h3>					
-                            </div>
-                        </div>
-                    </div>
-
-                </div>	
-        </section>
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><g fill="#222222"><rect fill="#FFFFFF" width="100%" height="100%"/><path d="M0 100V0h1000v4L0 100z"></path></g></svg>
-
-        <section id="projects" class="uk-section uk-section-large uk-section-default uk-height-viewport">
-            <div class="uk-container uk-container-large uk-text-center">
-                <h1 class="uk-heading-2xlarge uk-margin-large text-primary">Projects</h1>
-                <p class="text-secondary">Coming soon...</p>
+    <!-- Experience -->
+    <section id="experience" class="bg-gray-50 border-y border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="mb-12">
+                <div class="text-sm font-mono text-primary mb-2">BACKGROUND</div>
+                <h2 class="text-3xl font-bold">Experience</h2>
             </div>
-        </section>
-
-        <section id="contact" class="uk-section uk-section-large uk-section-secondary">
             
-            <div class="uk-container uk-container-large">
-                
-                <div uk-grid class="uk-grid-small uk-child-width-expand@s uk-flex uk-flex-center uk-flex-middle" uk-scrollspy="cls: uk-animation-slide-left; target: .uk-tile; delay: 500; repeat: true">
-                    <div class="uk-width-auto@s">
-                        <h1 class="uk-heading-2xlarge uk-tile text-primary">Contact</h1>		
-                    </div>
-                    <hr class="uk-divider-vertical">
-                    <div class="uk-tile uk-tile-secondary uk-padding-large">
-                        <a href="" uk-icon="icon: mail; ratio: 2.5"></a>
-                    </div>	
-                    <div class="uk-tile uk-tile-secondary uk-padding-large">
-                        <a href="" uk-icon="icon: github; ratio: 2.5"></a>
-                    </div>	
-                    <div class="uk-tile uk-tile-secondary uk-padding-large">
-                        <a href="" uk-icon="icon: linkedin; ratio: 2.5"></a>
-                    </div>	
+            <div class="space-y-8">
+                <div class="border-l-2 border-primary pl-6">
+                    <div class="text-sm font-mono text-gray-500 mb-1">PRESENT</div>
+                    <h3 class="text-xl font-semibold mb-2">Data Center Technician 2</h3>
+                    <p class="text-gray-600 mb-3">Company Name</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>Manage and maintain server infrastructure across multiple data center environments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>Perform hardware installations, troubleshooting, and routine maintenance procedures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>Monitor system performance and implement preventive maintenance protocols</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>Collaborate with network and cloud teams to ensure optimal infrastructure performance</span>
+                        </li>
+                    </ul>
                 </div>
-                <hr class="uk-divider-icon">
-                <p class="uk-text-meta uk-text-light uk-text-lowercase uk-align-left"><span uk-icon="uikit"></span> Made with <a href="https://getuikit.com" class="uk-link-muted">UIkit</a></p>
-                <p class="uk-text-meta uk-text-light uk-text-lowercase uk-align-right">
-                    <svg uk-svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512"><path fill="#8a9191" d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"/></svg>
-                    Nathaniel Adam King, 2025.</p>
-            </div>					
-        </section>
 
-        <div class="uk-section uk-section-small uk-text-center uk-text-muted">
-            <div class="uk-container">
-                <div class="uk-grid-small uk-flex uk-flex-center uk-flex-middle" uk-grid>
-                    <div>
-                        <a href="https://naadamki.github.io/portfolio"><img src="/assets/sig.png" alt="" height="57.5" width="115"></a>
+                <div class="border-l-2 border-gray-300 pl-6">
+                    <div class="text-sm font-mono text-gray-500 mb-1">ONGOING</div>
+                    <h3 class="text-xl font-semibold mb-2">Cloud & Network Engineering Studies</h3>
+                    <p class="text-gray-600 mb-3">Educational Institution</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>Focused coursework in cloud architecture, network design, and infrastructure automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
+                            <span>Hands-on experience with AWS and Azure cloud platforms</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="mb-12">
+            <div class="text-sm font-mono text-primary mb-2">PORTFOLIO</div>
+            <h2 class="text-3xl font-bold mb-4">Projects</h2>
+            <p class="text-gray-600 max-w-2xl">A collection of projects demonstrating cloud infrastructure, automation, and web development capabilities.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Cloud Infrastructure Project -->
+            <div class="border border-gray-200 hover:border-primary transition-colors">
+                <div class="p-8">
+                    <div class="text-sm font-mono text-primary mb-3">CLOUD INFRASTRUCTURE</div>
+                    <h3 class="text-2xl font-semibold mb-4">AWS Multi-Tier Architecture</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Designed and deployed a scalable multi-tier web application on AWS using EC2, RDS, and S3. 
+                        Implemented auto-scaling, load balancing, and automated backups. Configured VPC with public/private subnets 
+                        and security groups following best practices.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">AWS</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">EC2</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">RDS</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">S3</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">CloudWatch</span>
                     </div>
-                    <div>
-                        <p class="uk-text-small">
-                            &copy; <span id="year-display">2025</span> Nathaniel Adam King
-                            <br>
-                            Made with <span class="uk-text-primary" uk-icon="heart"></span> and 
-                            <a href="getuikit.com" target="_blank" rel="noopener noreferrer" uk-icon="uikit"></a>.	
-                        </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>
+                            View Documentation
+                        </a>
+                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                            <i class="fa-brands fa-github mr-2"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infrastructure Automation -->
+            <div class="border border-gray-200 hover:border-primary transition-colors">
+                <div class="p-8">
+                    <div class="text-sm font-mono text-primary mb-3">AUTOMATION</div>
+                    <h3 class="text-2xl font-semibold mb-4">Infrastructure Monitoring Dashboard</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Built a Python-based monitoring tool that collects metrics from cloud resources and on-premise servers. 
+                        Features real-time alerts, historical data visualization, and automated reporting. 
+                        Web interface built with Django and Bootstrap for easy access across teams.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Python</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Django</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">MySQL</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Bootstrap</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Linux</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>
+                            Live Demo
+                        </a>
+                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                            <i class="fa-brands fa-github mr-2"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Azure Project -->
+            <div class="border border-gray-200 hover:border-primary transition-colors">
+                <div class="p-8">
+                    <div class="text-sm font-mono text-primary mb-3">CLOUD MIGRATION</div>
+                    <h3 class="text-2xl font-semibold mb-4">Azure VM Migration & Management</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Executed a proof-of-concept migration of on-premise workloads to Azure VMs. 
+                        Implemented Azure Backup, configured network security groups, and established monitoring with Azure Monitor. 
+                        Documented migration procedures and created runbooks for ongoing operations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Azure</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">VMs</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Azure Monitor</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Networking</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">PowerShell</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                            <i class="fa-brands fa-github mr-2"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Application -->
+            <div class="border border-gray-200 hover:border-primary transition-colors">
+                <div class="p-8">
+                    <div class="text-sm font-mono text-primary mb-3">WEB APPLICATION</div>
+                    <h3 class="text-2xl font-semibold mb-4">IT Asset Management System</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Full-stack web application for tracking data center hardware inventory and maintenance schedules. 
+                        Features include user authentication, search/filter capabilities, and automated email notifications. 
+                        Deployed on Linux server with Git-based version control workflow.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Django</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Python</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">MySQL</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">HTML/CSS</span>
+                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">JavaScript</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>
+                            Live Demo
+                        </a>
+                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                            <i class="fa-brands fa-github mr-2"></i>
+                            GitHub
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
+    <!-- Skills -->
+    <section id="skills" class="bg-gray-50 border-y border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="mb-12">
+                <div class="text-sm font-mono text-primary mb-2">CAPABILITIES</div>
+                <h2 class="text-3xl font-bold">Technical Skills</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-semibold mb-4 text-sm font-mono text-gray-700">CLOUD PLATFORMS</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            AWS
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Azure
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Cloud Architecture
+                        </li>
+                    </ul>
+                </div>
 
+                <div>
+                    <h3 class="font-semibold mb-4 text-sm font-mono text-gray-700">DEVELOPMENT</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Python
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Django
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            HTML/CSS
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            JavaScript
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            MySQL
+                        </li>
+                    </ul>
+                </div>
 
+                <div>
+                    <h3 class="font-semibold mb-4 text-sm font-mono text-gray-700">INFRASTRUCTURE</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Linux
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Data Center Operations
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Networking
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Server Management
+                        </li>
+                    </ul>
+                </div>
 
-    </body>
+                <div>
+                    <h3 class="font-semibold mb-4 text-sm font-mono text-gray-700">TOOLS & PRACTICES</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Git/GitHub
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Bootstrap
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            Responsive Design
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-primary mr-3"></i>
+                            ITIL Framework
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="mb-12">
+            <div class="text-sm font-mono text-primary mb-2">CREDENTIALS</div>
+            <h2 class="text-3xl font-bold">Certifications</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
+                <i class="fa-solid fa-certificate text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-2">CompTIA A+</h3>
+                <p class="text-sm text-gray-600">CompTIA</p>
+            </div>
+
+            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
+                <i class="fa-brands fa-linux text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-2">Linux Professional Institute</h3>
+                <p class="text-sm text-gray-600">LPI</p>
+            </div>
+
+            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
+                <i class="fa-solid fa-certificate text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-2">ITIL 4 Foundation</h3>
+                <p class="text-sm text-gray-600">AXELOS</p>
+            </div>
+
+            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
+                <i class="fa-brands fa-microsoft text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-2">Azure Fundamentals</h3>
+                <p class="text-sm text-gray-600">Microsoft</p>
+            </div>
+
+            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
+                <i class="fa-brands fa-aws text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-2">AWS Fundamentals</h3>
+                <p class="text-sm text-gray-600">Amazon Web Services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-gray-50 border-y border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="text-sm font-mono text-primary mb-2">GET IN TOUCH</div>
+                <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
+                <p class="text-gray-600 mb-10">
+                    Open to opportunities in cloud engineering, infrastructure automation, and full-stack development. 
+                    Feel free to reach out to discuss projects or potential collaboration.
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:your.email@example.com" class="border border-gray-300 px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-flex items-center">
+                        <i class="fa-solid fa-envelope mr-2"></i>
+                        Email
+                    </a>
+                    <a href="https://github.com/yourusername" class="border border-gray-300 px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-flex items-center">
+                        <i class="fa-brands fa-github mr-2"></i>
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" class="border border-gray-300 px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-flex items-center">
+                        <i class="fa-brands fa-linkedin mr-2"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto px-6 py-12 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Your Name. All rights reserved.</p>
+    </footer>
+</body>
 </html>
