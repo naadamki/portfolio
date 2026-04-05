@@ -1,421 +1,740 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathaniel Adam King - IT Professional</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'IBM Plex Sans', sans-serif;
-        }
-        .font-mono {
-            font-family: 'IBM Plex Mono', monospace;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#64748b',
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nathaniel Adam King — Network Engineer & IT Professional</title>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="style.css">
+
 </head>
-<body class="bg-white text-gray-900">
-    <!-- Header -->
-    <header class="border-b border-gray-200 sticky top-0 bg-white z-50">
-        <nav class="w-full lg:max-width-6xl  mx-auto px-6 py-6">
-            <div class="flex justify-between items-center">
-                <div class="text-xl font-semibold font-mono">YOUR NAME</div>
-                <ul class="flex space-x-8">
-                    <li><a href="#experience" class="text-gray-600 hover:text-primary transition-colors">Experience</a></li>
-                    <li><a href="#projects" class="text-gray-600 hover:text-primary transition-colors">Projects</a></li>                    <li><a href="#certifications" class="text-gray-600 hover:text-primary transition-colors">Certifications</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<body>
 
-    <!-- Hero Section -->
-    <section id="about" class="max-w-6xl mx-auto px-6 py-20">
-        <div class="max-w-3xl">
-            <div class="text-sm font-mono text-primary mb-4">IT PROFESSIONAL</div>
-            <h1 class="text-5xl font-bold mb-6 leading-tight">Data Center Technician & Cloud Infrastructure Specialist</h1>
-            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                Currently working as a Data Center Technician 2, pursuing Cloud and Network Engineering. 
-                Experienced in infrastructure management, cloud platforms, and modern development practices. 
-                Focused on bridging operations and development to build scalable, reliable systems.
-            </p>
-            <div class="flex space-x-4">
-                <a href="#contact" class="bg-primary text-white px-6 py-3 hover:bg-blue-700 transition-colors">
-                    Get in Touch
-                </a>
-                <a href="#projects" class="border border-gray-300 px-6 py-3 hover:border-primary hover:text-primary transition-colors">
-                    View Work
-                </a>
-            </div>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- <svg class="progress-circle" viewbox="0 0 100 100">
+	  <circle cx="50" cy="50" r="40"></circle>
+	</svg>	   -->
+
+
+  <!-- Navigation -->
+  <!-- <nav aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">NAK</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav> -->
+
+  <nav aria-label="Main navigation">
+    <div class="nav-btn-wrap">
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+      <svg class="progress-circle" viewbox="0 0 100 100">
+        <circle cx="50" cy="50" r="40"></circle>
+      </svg>
+    </div>  	  
+  </nav>
+
+  <!-- Overlay -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+    <ul class="overlay-links">
+      <li><a href="#hero"       class="overlay-link" data-num="01">Welcome</a></li>
+      <li><a href="#about"      class="overlay-link" data-num="02">About</a></li>
+      <li><a href="#experience" class="overlay-link" data-num="03">Experience</a></li>
+      <li><a href="#education"  class="overlay-link" data-num="04">Learning</a></li>
+      <li><a href="#skills"     class="overlay-link" data-num="05">Skills</a></li>
+      <li><a href="#projects"   class="overlay-link" data-num="06">Projects</a></li>
+      <li><a href="#contact"    class="overlay-link" data-num="07">Contact</a></li>
+    </ul>
+  </div>
+
+
+
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero" aria-label="Introduction">
+    <p class="hero-eyebrow">Dallas, TX — Open to opportunities</p>
+
+    <h1 class="hero-greeting">
+      <span class="line">Hello,</span>
+      <span class="line">I'm <em>Adam.</em></span>
+    </h1>
+
+    <div class="hero-sub">
+      <p>Network engineer in the making. Datacenter technician by trade. I build infrastructure that disappears—so everything else can breathe.</p>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll to explore</span>
+    </div>
+
+  </section>
+
+  <!-- Fixed section counter — all 7 numbers pre-rendered, scrub slides between them -->
+  <div class="section-counter" id="sectionCounter" aria-hidden="true">
+    <span class="sc-num">Welcome</span>
+    <span class="sc-num">  About</span>
+    <span class="sc-num">History</span>
+    <span class="sc-num">Studies</span>
+    <span class="sc-num">Talents</span>
+    <span class="sc-num">Works</span>
+    <span class="sc-num">Contact</span>
+  </div>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" aria-label="About Nathaniel">
+    <p class="section-label">About</p>
+
+    <div class="story-block">
+      <p class="story-sentence">I make things <em>connect.</em></p>
+      <p class="story-sentence">I keep servers alive <em>at night.</em></p>
+      <p class="story-sentence">I'm studying to architect <em>the cloud</em> itself.</p>
+    </div>
+
+    <div class="about-body">
+      <p>With a background spanning datacenter operations, hardware maintenance, and cloud infrastructure, I bring a hands-on perspective to every technical challenge. Currently pursuing a B.S. in Cloud and Network Engineering at WGU while holding certifications across CompTIA, AWS, Azure, and ITIL.</p>
+      <p>I'm building toward a career in network engineering and cloud infrastructure—the kind of work where architecture decisions shape how businesses scale. I combine real-world datacenter experience with a growing portfolio of cloud skills and a commitment to learning that doesn't stop.</p>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section id="experience" aria-label="Work experience">
+    <p class="section-label">Experience</p>
+
+    <div class="exp-header">
+      <h2 class="section-title">Where I've<br/><em>worked.</em></h2>
+      <p class="exp-intro">Four roles, two industries, one consistent theme: showing up, solving problems, and making things run smoother than before.</p>
+    </div>
+
+    <div class="exp-list">
+
+      <article class="exp-item">
+        <time class="exp-date">Dec 2025 — Present</time>
+        <div>
+          <p class="exp-company">C.H. Reynolds</p>
+          <h3 class="exp-role">Datacenter Technician II</h3>
+          <p class="exp-desc">Hardware installations, upgrades, and decommissioning of server and network equipment. Diagnosing and resolving failures in production environments—failed components, drive replacements, and connectivity issues—where uptime is non-negotiable.</p>
         </div>
-    </section>
+        <span class="exp-tag current">Current</span>
+      </article>
 
-    <!-- Experience -->
-    <section id="experience" class="bg-gray-50 border-y border-gray-200">
-        <div class="max-w-full lg:max-w-6xl mx-auto px-6 py-20">
-            <div class="mb-12">
-                <div class="text-sm font-mono text-primary mb-2">BACKGROUND</div>
-                <h2 class="text-3xl font-bold">Experience</h2>
-            </div>
-            
-            <div class="space-y-8">
-                <div class="border-l-2 border-primary pl-6">
-                    <div class="text-sm font-mono text-gray-500 mb-1">PRESENT</div>
-                    <h3 class="text-xl font-semibold mb-2">Data Center Technician 2</h3>
-                    <p class="text-gray-600 mb-3">Company Name</p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
-                            <span>Manage and maintain server infrastructure across multiple data center environments</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
-                            <span>Perform hardware installations, troubleshooting, and routine maintenance procedures</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
-                            <span>Monitor system performance and implement preventive maintenance protocols</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
-                            <span>Collaborate with network and cloud teams to ensure optimal infrastructure performance</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="border-l-2 border-gray-300 pl-6">
-                    <div class="text-sm font-mono text-gray-500 mb-1">ONGOING</div>
-                    <h3 class="text-xl font-semibold mb-2">Cloud & Network Engineering Studies</h3>
-                    <p class="text-gray-600 mb-3">Educational Institution</p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
-                            <span>Focused coursework in cloud architecture, network design, and infrastructure automation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-chevron-right text-primary text-xs mt-1.5 mr-3"></i>
-                            <span>Hands-on experience with AWS and Azure cloud platforms</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+      <article class="exp-item">
+        <time class="exp-date">Jun 2025 — Oct 2025</time>
+        <div>
+          <p class="exp-company">IBM SoftLayer</p>
+          <h3 class="exp-role">Datacenter Technician</h3>
+          <p class="exp-desc">Performed hardware installations and maintenance in enterprise-scale datacenter environments. Tracked and maintained real-time asset inventory using internal platforms to support cloud resource provisioning for IBM's global infrastructure.</p>
         </div>
-    </section>
+        <span class="exp-tag">IBM Cloud</span>
+      </article>
 
-    <!-- Projects -->
-    <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
-        <div class="mb-12">
-            <div class="text-sm font-mono text-primary mb-2">PORTFOLIO</div>
-            <h2 class="text-3xl font-bold mb-4">Projects</h2>
-            <p class="text-gray-600 max-w-2xl">A collection of projects demonstrating cloud infrastructure, automation, and web development capabilities.</p>
+      <article class="exp-item">
+        <time class="exp-date">May 2024 — May 2025</time>
+        <div>
+          <p class="exp-company">Walmart</p>
+          <h3 class="exp-role">Inventory & Logistics Associate</h3>
+          <p class="exp-desc">Managed high-volume inventory operations, warehouse logistics, and real-time stock organization. Developed a reputation for efficiency, accuracy under pressure, and supporting team operations on tight timelines.</p>
         </div>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-            <!-- Cloud Infrastructure Project -->
-            <div class="border border-gray-200 hover:border-primary transition-colors">
-                <div class="p-8">
-                    <div class="text-sm font-mono text-primary mb-3">CLOUD INFRASTRUCTURE</div>
-                    <h3 class="text-2xl font-semibold mb-4">AWS Multi-Tier Architecture</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Designed and deployed a scalable multi-tier web application on AWS using EC2, RDS, and S3. 
-                        Implemented auto-scaling, load balancing, and automated backups. Configured VPC with public/private subnets 
-                        and security groups following best practices.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">AWS</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">EC2</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">RDS</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">S3</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">CloudWatch</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
-                            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>
-                            View Documentation
-                        </a>
-                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
-                            <i class="fa-brands fa-github mr-2"></i>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <span class="exp-tag">Operations</span>
+      </article>
 
-            <!-- Infrastructure Automation -->
-            <div class="border border-gray-200 hover:border-primary transition-colors">
-                <div class="p-8">
-                    <div class="text-sm font-mono text-primary mb-3">AUTOMATION</div>
-                    <h3 class="text-2xl font-semibold mb-4">Infrastructure Monitoring Dashboard</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Built a Python-based monitoring tool that collects metrics from cloud resources and on-premise servers. 
-                        Features real-time alerts, historical data visualization, and automated reporting. 
-                        Web interface built with Django and Bootstrap for easy access across teams.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Python</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Django</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">MySQL</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Bootstrap</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Linux</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
-                            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>
-                            Live Demo
-                        </a>
-                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
-                            <i class="fa-brands fa-github mr-2"></i>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Azure Project -->
-            <div class="border border-gray-200 hover:border-primary transition-colors">
-                <div class="p-8">
-                    <div class="text-sm font-mono text-primary mb-3">CLOUD MIGRATION</div>
-                    <h3 class="text-2xl font-semibold mb-4">Azure VM Migration & Management</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Executed a proof-of-concept migration of on-premise workloads to Azure VMs. 
-                        Implemented Azure Backup, configured network security groups, and established monitoring with Azure Monitor. 
-                        Documented migration procedures and created runbooks for ongoing operations.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Azure</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">VMs</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Azure Monitor</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Networking</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">PowerShell</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
-                            <i class="fa-brands fa-github mr-2"></i>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Web Application -->
-            <div class="border border-gray-200 hover:border-primary transition-colors">
-                <div class="p-8">
-                    <div class="text-sm font-mono text-primary mb-3">WEB APPLICATION</div>
-                    <h3 class="text-2xl font-semibold mb-4">IT Asset Management System</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Full-stack web application for tracking data center hardware inventory and maintenance schedules. 
-                        Features include user authentication, search/filter capabilities, and automated email notifications. 
-                        Deployed on Linux server with Git-based version control workflow.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Django</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">Python</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">MySQL</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">HTML/CSS</span>
-                        <span class="text-xs font-mono border border-gray-300 px-3 py-1">JavaScript</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
-                            <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>
-                            Live Demo
-                        </a>
-                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
-                            <i class="fa-brands fa-github mr-2"></i>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <article class="exp-item">
+        <time class="exp-date">Jul 2015 — Jan 2020</time>
+        <div>
+          <p class="exp-company">Einstein Bros Bagels</p>
+          <h3 class="exp-role">Assistant Store Manager</h3>
+          <p class="exp-desc">Led inventory management, staff training, and operational procedures. Analyzed sales trends and implemented improvements. Managed the day-to-day rhythm of a full-service retail environment with a customer-first mindset.</p>
         </div>
-    </section>
+        <span class="exp-tag">Leadership</span>
+      </article>
 
-    <!-- Skills -->
-    <section id="skills" class="bg-gray-50 border-y border-gray-200">
-        <div class="max-w-full md:max-w-6xl mx-auto px-6 py-20">
-            <div class="mb-12">
-                <div class="text-sm font-mono text-primary mb-2">CAPABILITIES</div>
-                <h2 class="text-3xl font-bold">Technical Skills</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="font-semibold mb-4 text-sm font-mono text-gray-700">CLOUD PLATFORMS</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            AWS
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Azure
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Cloud Architecture
-                        </li>
-                    </ul>
-                </div>
+    </div>
+  </section>
 
-                <div>
-                    <h3 class="font-semibold mb-4 text-sm font-mono text-gray-700">DEVELOPMENT</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Python
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Django
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            HTML/CSS
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            JavaScript
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            MySQL
-                        </li>
-                    </ul>
-                </div>
+  <!-- ==================== EDUCATION & CERTS ==================== -->
+  <section id="education" aria-label="Education and certifications">
+    <p class="section-label">Education & Certifications</p>
 
-                <div>
-                    <h3 class="font-semibold mb-4 text-sm font-mono text-gray-700">INFRASTRUCTURE</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Linux
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Data Center Operations
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Networking
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Server Management
-                        </li>
-                    </ul>
-                </div>
 
-                <div>
-                    <h3 class="font-semibold mb-4 text-sm font-mono text-gray-700">TOOLS & PRACTICES</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Git/GitHub
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Bootstrap
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            Responsive Design
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-primary mr-3"></i>
-                            ITIL Framework
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="edu-grid">
+
+      <div class="edu-block">
+        <p class="edu-block-title">Degrees</p>
+        <div style="margin-bottom: 2.5rem;">
+          <p class="edu-degree">B.S. Cloud &amp; Network Engineering</p>
+          <p class="edu-school">Western Governor's University</p>
+          <p class="edu-year">Sep 2023 — In Progress</p>
         </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" class="max-w-6xl mx-auto px-6 py-20">
-        <div class="mb-12">
-            <div class="text-sm font-mono text-primary mb-2">CREDENTIALS</div>
-            <h2 class="text-3xl font-bold">Certifications</h2>
+        <div>
+          <p class="edu-degree">A.A. Psychology</p>
+          <p class="edu-school">Trinity Valley Community College</p>
+          <p class="edu-year">Jan 2000 — Jul 2001</p>
         </div>
-        
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
-                <i class="fa-solid fa-certificate text-primary text-2xl mb-4"></i>
-                <h3 class="font-semibold mb-2">CompTIA A+</h3>
-                <p class="text-sm text-gray-600">CompTIA</p>
-            </div>
+      </div>
 
-            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
-                <i class="fa-brands fa-linux text-primary text-2xl mb-4"></i>
-                <h3 class="font-semibold mb-2">Linux Professional Institute</h3>
-                <p class="text-sm text-gray-600">LPI</p>
-            </div>
-
-            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
-                <i class="fa-solid fa-certificate text-primary text-2xl mb-4"></i>
-                <h3 class="font-semibold mb-2">ITIL 4 Foundation</h3>
-                <p class="text-sm text-gray-600">AXELOS</p>
-            </div>
-
-            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
-                <i class="fa-brands fa-microsoft text-primary text-2xl mb-4"></i>
-                <h3 class="font-semibold mb-2">Azure Fundamentals</h3>
-                <p class="text-sm text-gray-600">Microsoft</p>
-            </div>
-
-            <div class="border border-gray-200 p-6 hover:border-primary transition-colors">
-                <i class="fa-brands fa-aws text-primary text-2xl mb-4"></i>
-                <h3 class="font-semibold mb-2">AWS Fundamentals</h3>
-                <p class="text-sm text-gray-600">Amazon Web Services</p>
-            </div>
+      <div class="edu-block">
+        <p class="edu-block-title">Certifications</p>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-badge"></div>
+            <span class="cert-name">CompTIA Network+</span>
+            <span class="cert-date">Apr 2026</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge"></div>
+            <span class="cert-name">ITIL 4 Foundation</span>
+            <span class="cert-date">Jul 2025</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge"></div>
+            <span class="cert-name">Microsoft Azure Fundamentals</span>
+            <span class="cert-date">Aug 2025</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge"></div>
+            <span class="cert-name">LPI Linux Essentials</span>
+            <span class="cert-date">Apr 2024</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge"></div>
+            <span class="cert-name">AWS Cloud Practitioner</span>
+            <span class="cert-date">Feb 2024</span>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge"></div>
+            <span class="cert-name">CompTIA A+</span>
+            <span class="cert-date">Dec 2023</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact -->
-    <section id="contact" class="bg-gray-50 border-y border-gray-200">
-        <div class="max-w-6xl mx-auto px-6 py-20">
-            <div class="max-w-2xl mx-auto text-center">
-                <div class="text-sm font-mono text-primary mb-2">GET IN TOUCH</div>
-                <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
-                <p class="text-gray-600 mb-10">
-                    Open to opportunities in cloud engineering, infrastructure automation, and full-stack development. 
-                    Feel free to reach out to discuss projects or potential collaboration.
-                </p>
-                <div class="flex justify-center space-x-6">
-                    <a href="mailto:your.email@example.com" class="border border-gray-300 px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-flex items-center">
-                        <i class="fa-solid fa-envelope mr-2"></i>
-                        Email
-                    </a>
-                    <a href="https://github.com/yourusername" class="border border-gray-300 px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-flex items-center">
-                        <i class="fa-brands fa-github mr-2"></i>
-                        GitHub
-                    </a>
-                    <a href="https://linkedin.com/in/yourusername" class="border border-gray-300 px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-flex items-center">
-                        <i class="fa-brands fa-linkedin mr-2"></i>
-                        LinkedIn
-                    </a>
-                </div>
-            </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills" aria-label="Technical skills">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">Tools of <em>the trade.</em></h2>
+
+    <div class="skills-grid">
+      <span class="skill-pill" data-level="1">Cloud Infrastructure</span>
+      <span class="skill-pill" data-level="1">Server Hardware Maintenance</span>
+      <span class="skill-pill" data-level="1">Network Troubleshooting</span>
+      <span class="skill-pill" data-level="1">Linux Administration</span>
+      <span class="skill-pill" data-level="2">Asset Management</span>
+      <span class="skill-pill" data-level="3">Github</span>
+      <span class="skill-pill" data-level="2">AWS &amp; Azure</span>
+      <span class="skill-pill" data-level="3">Python</span>
+      <span class="skill-pill" data-level="2">SQL</span>
+      <span class="skill-pill" data-level="1">Windows Server</span>
+      <span class="skill-pill" data-level="2">macOS</span>
+      <span class="skill-pill" data-level="4">Android</span>
+      <span class="skill-pill" data-level="4">ITIL Practices</span>
+      <span class="skill-pill" data-level="2">Diagnostics &amp; Root Cause Analysis</span>
+      <span class="skill-pill" data-level="4">Customer Relations</span>
+      <span class="skill-pill" data-level="3">Team Leadership</span>
+      <span class="skill-pill" data-level="4">Written &amp; Verbal Communication</span>
+      <span class="skill-pill" data-level="4">Problem-Solving &amp; Analytical Thinking</span>
+      <span class="skill-pill" data-level="4">Collaboration</span>
+      <span class="skill-pill" data-level="4">Adaptability &amp; Continuous Learning</span>
+      <span class="skill-pill" data-level="4">Diagnostic Skills</span> 
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects" aria-label="Projects">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Things I'm <em>building.</em></h2>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <p class="project-num">001</p>
+        <h3 class="project-title">HomeNet Monitor</h3>
+        <p class="project-desc">A Python-based home network monitoring dashboard that tracks device uptime, bandwidth usage, and alerts for unusual activity. Built on a Raspberry Pi with a lightweight web UI.</p>
+        <div class="project-tags">
+          <span class="project-tech">Python</span>
+          <span class="project-tech">Raspberry Pi</span>
+          <span class="project-tech">Networking</span>
         </div>
-    </section>
+        <span class="project-status"><span class="status-dot soon"></span> Coming Soon</span>
+      </article>
 
-    <!-- Footer -->
-    <footer class="max-w-6xl mx-auto px-6 py-12 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
-    </footer>
+      <article class="project-card">
+        <p class="project-num">002</p>
+        <h3 class="project-title">Cloud Resume Challenge</h3>
+        <p class="project-desc">An AWS-hosted static resume site with a visitor counter backed by DynamoDB and Lambda, following the Cloud Resume Challenge spec. Deployed via SAM and CI/CD pipeline on GitHub Actions.</p>
+        <div class="project-tags">
+          <span class="project-tech">AWS</span>
+          <span class="project-tech">Lambda</span>
+          <span class="project-tech">DynamoDB</span>
+          <span class="project-tech">CI/CD</span>
+        </div>
+        <span class="project-status"><span class="status-dot soon"></span> Coming Soon</span>
+      </article>
+
+      <article class="project-card">
+        <p class="project-num">003</p>
+        <h3 class="project-title">Linux Hardening Scripts</h3>
+        <p class="project-desc">A collection of Bash scripts for automating server hardening on fresh Ubuntu/Debian installs—covering SSH lockdown, firewall rules, user permissions, and automated audit logging.</p>
+        <div class="project-tags">
+          <span class="project-tech">Bash</span>
+          <span class="project-tech">Linux</span>
+          <span class="project-tech">Security</span>
+        </div>
+        <span class="project-status"><span class="status-dot soon"></span> Coming Soon</span>
+      </article>
+
+      <article class="project-card">
+        <p class="project-num">004</p>
+        <h3 class="project-title">VLab Environment</h3>
+        <p class="project-desc">A personal virtualization lab built with Proxmox, running simulated network topologies using GNS3. Used for CCNA-track study, VLAN segmentation labs, and routing protocol practice.</p>
+        <div class="project-tags">
+          <span class="project-tech">Proxmox</span>
+          <span class="project-tech">GNS3</span>
+          <span class="project-tech">VLANs</span>
+          <span class="project-tech">BGP/OSPF</span>
+        </div>
+        <span class="project-status"><span class="status-dot soon"></span> Coming Soon</span>
+      </article>
+
+      <article class="project-card">
+        <p class="project-num">005</p>
+        <h3 class="project-title">NetScan Visualizer</h3>
+        <p class="project-desc">A Python tool that wraps nmap to generate visual network topology maps. Discovers live hosts, open ports, and OS fingerprints, then renders an interactive graph with D3.js.</p>
+        <div class="project-tags">
+          <span class="project-tech">Python</span>
+          <span class="project-tech">nmap</span>
+          <span class="project-tech">D3.js</span>
+        </div>
+        <span class="project-status"><span class="status-dot soon"></span> Coming Soon</span>
+      </article>
+
+      <article class="project-card">
+        <p class="project-num">006</p>
+        <h3 class="project-title">Datacenter Asset Tracker</h3>
+        <p class="project-desc">A lightweight internal asset management tool built with FastAPI and a SQLite backend. Tracks rack positions, hardware specs, warranty status, and decommission schedules with a minimal dashboard UI.</p>
+        <div class="project-tags">
+          <span class="project-tech">FastAPI</span>
+          <span class="project-tech">SQL</span>
+          <span class="project-tech">Python</span>
+        </div>
+        <span class="project-status"><span class="status-dot soon"></span> Coming Soon</span>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" aria-label="Contact information">
+    <p class="section-label">Let's connect</p>
+
+
+
+    <h2 class="contact-big">
+      Thanks for making it<br/>this far, <em>truly.</em>
+    </h2>
+
+    <div class="contact-small">
+      <div class="contact-avatar">
+        <img src="assets/profile_pic.jpg" alt="Nathaniel Adam King" />
+      </div>
+  
+      <p class="contact-thanks">
+        I'm actively looking for opportunities in network engineering, cloud infrastructure, and technical support roles. If something here resonated—I'd love to talk.
+      </p>      
+    </div>
+    <div class="contact-links">
+      <div class="contact-link">
+        <a href="mailto:emailkingadam@gmail.com">
+          <svg class="contact-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0 512 114.6 512 256l0 32c0 53-43 96-96 96-29.3 0-55.6-13.2-73.2-33.9-22.8 21-53.3 33.9-86.8 33.9-70.7 0-128-57.3-128-128s57.3-128 128-128c27.9 0 53.7 8.9 74.7 24.1 5.7-5 13.1-8.1 21.3-8.1 17.7 0 32 14.3 32 32l0 112c0 17.7 14.3 32 32 32s32-14.3 32-32l0-32c0-106-86-192-192-192zm64 192a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/>
+          </svg>
+        </a>
+      </div>      
+      <div class="contact-link">
+        <a href="https://github.com/naadamki">
+          <svg class="contact-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="contact-link">
+        <a href="https://linkedin.com/in/kingnathanieladam">
+          <svg class="contact-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M416 32L31.9 32C14.3 32 0 46.5 0 64.3L0 447.7C0 465.5 14.3 480 31.9 480L416 480c17.6 0 32-14.5 32-32.3l0-383.4C448 46.5 433.6 32 416 32zM135.4 416l-66.4 0 0-213.8 66.5 0 0 213.8-.1 0zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77zM384.3 416l-66.4 0 0-104c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9l0 105.8-66.4 0 0-213.8 63.7 0 0 29.2 .9 0c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9l0 117.2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>© 2026 Nathaniel Adam King</p>
+    <p>Dallas, TX — Open to remote & hybrid roles</p>
+  </footer>
+
+
+
+  <!-- =============================================
+       SCRIPTS
+       GSAP + ScrollTrigger + Lenis smooth scroll
+       ============================================= -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script>
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* =============================================
+       CUSTOM CURSOR
+       ============================================= */
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      gsap.to(cursor, { x: mouseX, y: mouseY, duration: 0.1 });
+    });
+
+    // Smooth ring follow
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      gsap.set(cursorRing, { x: ringX, y: ringY });
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Cursor expand on hover
+    document.querySelectorAll('a, button, .project-card, .exp-item').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        gsap.to(cursor, { width: 20, height: 20, duration: 0.3 });
+        gsap.to(cursorRing, { width: 60, height: 60, opacity: 0.3, duration: 0.3 });
+      });
+      el.addEventListener('mouseleave', () => {
+        gsap.to(cursor, { width: 10, height: 10, duration: 0.3 });
+        gsap.to(cursorRing, { width: 36, height: 36, opacity: 0.5, duration: 0.3 });
+      });
+    });
+
+
+
+
+    /* =============================================
+       NAVIGATION MENU
+       ============================================= */
+
+    const navToggle  = document.getElementById('navToggle');
+    const navOverlay = document.getElementById('navOverlay');
+    const overlayLinks = document.querySelectorAll('.overlay-link');
+
+    function openMenu() {
+        // Get the exact center of the hamburger button
+        const rect = navToggle.getBoundingClientRect();
+        const x = rect.left + rect.width  / 2;
+        const y = rect.top  + rect.height / 2;
+
+        // Set the clip-path origin to match
+        navOverlay.style.setProperty('--origin-x', x + 'px');
+        navOverlay.style.setProperty('--origin-y', y + 'px');
+
+        navToggle.classList.add('is-open');
+        navOverlay.classList.add('is-open');
+        navOverlay.setAttribute('aria-hidden', 'false');
+
+        gsap.to(overlayLinks, {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            stagger: 0.07,
+            ease: 'power3.out',
+            delay: 0.3,
+        });
+    }
+    function closeMenu() {
+        navToggle.classList.remove('is-open');
+        navOverlay.classList.remove('is-open');
+        navOverlay.setAttribute('aria-hidden', 'true');
+
+        gsap.set(overlayLinks, { opacity: 0, y: 30 });
+    }
+
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    // Close when a link is clicked
+    overlayLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+
+
+    // Progress Circle
+    const progressCircle = document.querySelector('.progress-circle circle');
+
+    window.addEventListener('scroll', () => {
+        const progress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        progressCircle.style.strokeDashoffset = 251 - (251 * progress);
+    });
+
+
+
+    /* =============================================
+       HERO ENTRANCE ANIMATION
+       ============================================= */
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    heroTl
+      .to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.8, delay: 0.3 })
+      .to('.hero-greeting .line', {
+        y: '0%',
+        duration: 1.1,
+        stagger: 0.12,
+        ease: 'expo.out'
+      }, '-=0.4')
+      .to('.hero-sub', { opacity: 1, y: 0, duration: 0.9 }, '-=0.5')
+      .to('.hero-scroll-hint', { opacity: 1, duration: 0.6 }, '-=0.3');
+
+    /* =============================================
+       SCROLL-TRIGGERED ANIMATIONS
+       ============================================= */
+
+    // --- ABOUT: story sentences stagger in ---
+    gsap.utils.toArray('.story-sentence').forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 82%',
+          toggleActions: 'play none none none',
+        },
+        delay: i * 0.1,
+      });
+    });
+
+    gsap.utils.toArray('.about-body p').forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+        delay: i * 0.15,
+      });
+    });
+
+    // --- EXPERIENCE: section title ---
+    gsap.to('#experience .section-title', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '#experience .section-title', start: 'top 80%' },
+    });
+
+    gsap.to('.exp-intro', {
+      opacity: 1,
+      duration: 0.9,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '.exp-intro', start: 'top 80%' },
+    });
+
+    gsap.utils.toArray('.exp-item').forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+        delay: i * 0.06,
+      });
+    });
+
+    // --- EDUCATION ---
+    gsap.utils.toArray('.edu-block').forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 82%' },
+        delay: i * 0.2,
+      });
+    });
+
+    // --- SKILLS ---
+    gsap.to('#skills .section-title', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '#skills .section-title', start: 'top 80%' },
+    });
+
+    gsap.to('.skills-grid', {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '.skills-grid', start: 'top 82%' },
+    });
+
+    // --- PROJECTS ---
+    gsap.to('#projects .section-title', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '#projects .section-title', start: 'top 80%' },
+    });
+
+    gsap.utils.toArray('.project-card').forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' },
+        delay: (i % 3) * 0.1,
+      });
+    });
+
+    // --- CONTACT ---
+
+    gsap.to('.contact-avatar', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: '.contact-avatar', start: 'top 85%' },
+    });    
+
+    gsap.to('.contact-big', {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.contact-big', start: 'top 80%' },
+    });
+
+    gsap.to('.contact-thanks', {
+      opacity: 1,
+      duration: 0.9,
+      scrollTrigger: { trigger: '.contact-thanks', start: 'top 85%' },
+      delay: 0.3,
+    });
+
+    gsap.to('.contact-links', {
+      opacity: 1,
+      y: 0,
+      duration: 0.9,
+      ease: 'power2.out',
+      scrollTrigger: { trigger: '.contact-links', start: 'top 88%' },
+      delay: 0.4,
+    });
+
+    /* =============================================
+       FIXED SECTION COUNTER — scrub-based (mirrors
+       reference parallax style: scroll drives it)
+       ============================================= */
+
+    const counter    = document.getElementById('sectionCounter');
+    const counterNums = gsap.utils.toArray('.sc-num');
+
+    // Section order matches the HTML
+    const sections = [
+      { id: 'hero',       dark: false },
+      { id: 'about',      dark: false },
+      { id: 'experience', dark: false },
+      { id: 'education',  dark: false },
+      { id: 'skills',     dark: false  },
+      { id: 'projects',   dark: false },
+      { id: 'contact',    dark: false },
+    ];
+
+    // Size the container once to fit one number (all spans same size)
+    function sizeCounter() {
+      // Temporarily make first span measurable (it's position:absolute)
+      const s = counterNums[0];
+      const h = s.offsetHeight;
+      const w = s.offsetWidth;
+      counter.style.height = h + 'px';
+      counter.style.width  = w + 'px';
+    }
+
+    document.fonts.ready.then(() => {
+      sizeCounter();
+
+      // Initial state: 01 visible at y:0, all others below (y:110%)
+      counterNums.forEach((el, i) => {
+        gsap.set(el, { y: i === 0 ? '0%' : '110%' });
+      });
+
+      // For each section after the first, create a scrubbed ScrollTrigger
+      // that slides OUT the previous number and slides IN the current one.
+      // scrub: 1.5 gives the same smooth, scroll-coupled feel as the reference.
+      // Because it's scrub-based (not event-based), reversing direction
+      // automatically reverses the animation — no state bugs.
+      sections.forEach((sec, i) => {
+        if (i === 0) return;
+
+        const el   = document.getElementById(sec.id);
+        const prev = counterNums[i - 1];
+        const curr = counterNums[i];
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: el,
+            start:  'top 95%',   // begin sliding as section enters view
+            end:    'top 10%',   // finish by the time it's near the top
+            scrub:  1.5,         // ties animation speed to scroll speed
+          }
+        })
+        .to(prev, { y: '-110%', ease: 'none' }, 0)
+        .to(curr, { y: '0%',    ease: 'none' }, 0);
+      });
+
+      // // Dark-section class toggle (skills section only)
+      // ScrollTrigger.create({
+      //   trigger: '#skills',
+      //   start: 'top 60%',
+      //   end:   'bottom 40%',
+      //   onEnter:      () => counter.classList.add('on-dark'),
+      //   onLeave:      () => counter.classList.remove('on-dark'),
+      //   onEnterBack:  () => counter.classList.add('on-dark'),
+      //   onLeaveBack:  () => counter.classList.remove('on-dark'),
+      // });
+    });
+
+    window.addEventListener('resize', sizeCounter);
+
+
+  </script>
 </body>
 </html>
