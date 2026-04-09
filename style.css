@@ -68,6 +68,12 @@ body:hover .cursor {
   padding: 1.75rem clamp(1.5rem, 5vw, 5rem);
 }
 
+.logo_short_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 nav {
   position: fixed;
   top: 0;
