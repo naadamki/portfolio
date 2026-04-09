@@ -172,7 +172,7 @@ body:hover .cursor { opacity: 1; }
 .logo_long {
   position: fixed;
   top: 0; left: 0;
-  z-index: 500;
+  z-index: 300;
   padding: 1.75rem $gutter;
 }
 
@@ -239,32 +239,80 @@ nav {
     z-index: 600; // stays on top of overlay
 }
 
-.ham-line {
+// .ham-line {
+//     display: block;
+//     width: 28px;
+//     height: 3px;
+//     background: $muted-pale;
+//     transform-origin: center;
+//     transition: transform 0.4s ease, opacity 0.3s ease, width 0.3s ease;
+//     mix-blend-mode: soft-light;
+
+// }
+
+// // Animate into X when open
+
+// .nav-hamburger.is-open .ham-line {
+//     background: $primary;
+// }
+// .nav-hamburger.is-open .ham-line:nth-child(1) {
+//     transform: translateY(6.5px) rotate(45deg);
+// }
+// .nav-hamburger.is-open .ham-line:nth-child(2) {
+//     opacity: 0;
+//     width: 0;
+// }
+// .nav-hamburger.is-open .ham-line:nth-child(3) {
+//     transform: translateY(-6.5px) rotate(-45deg);
+// }
+
+
+.ham-line-1, .ham-line-2, .ham-line-3 {
     display: block;
-    width: 28px;
-    height: 2px;
+    height: 3px;
     background: $muted-pale;
     transform-origin: center;
     transition: transform 0.4s ease, opacity 0.3s ease, width 0.3s ease;
     mix-blend-mode: soft-light;
-
+}
+.ham-line-1 {
+    width: 28px;
+}
+.ham-line-2 {
+    width: 18px;
+}
+.ham-line-3 {
+    width: 24px;
 }
 
 // Animate into X when open
-
-.nav-hamburger.is-open .ham-line {
+.nav-hamburger.is-open .ham-line-1 {
     background: $primary;
-}
-.nav-hamburger.is-open .ham-line:nth-child(1) {
     transform: translateY(6.5px) rotate(45deg);
 }
-.nav-hamburger.is-open .ham-line:nth-child(2) {
+.nav-hamburger.is-open .ham-line-2 {
+    background: $primary;
     opacity: 0;
     width: 0;
 }
-.nav-hamburger.is-open .ham-line:nth-child(3) {
+.nav-hamburger.is-open .ham-line-3 {
+    background: $primary;
     transform: translateY(-6.5px) rotate(-45deg);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Fullscreen overlay
 .nav-overlay {
@@ -1011,16 +1059,17 @@ nav {
 
 #contact {
     padding: $section-pad $gutter;
-    min-height: 80svh;
+    // min-height: 10svh;
+    height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    $background-size:   6px;
-    $background-fill:    $accent;
-    $background-opacity: 0.95;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$background-size}" height="#{$background-size}" viewBox="0 0 4 4"><path fill="#{encode-color($background-fill)}" fill-opacity="#{$background-opacity}" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"/></svg>');
+    // $background-size:   3px;
+    // $background-fill:    $accent;
+    // $background-opacity: 0.95;
+    // background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$background-size}" height="#{$background-size}" viewBox="0 0 4 4"><path fill="#{encode-color($background-fill)}" fill-opacity="#{$background-opacity}" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"/></svg>');
 
 
 
