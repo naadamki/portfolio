@@ -18,7 +18,6 @@ $muted:          color.mix($primary, $secondary, $weight: 50%);
 $muted-light:    color.scale($muted, $lightness: 25%);
 $muted-pale:     color.scale($muted, $lightness: 50%);
 
-
 $font-display: 'Syne', sans-serif;
 $font-sans:    'Fraunces', serif;
 $font-mono:    'DM Mono', monospace;
@@ -31,6 +30,25 @@ $max-w:       90vw;
     @return 'rgb(#{red($color)},#{green($color)},#{blue($color)})';
 }
 
+
+:root {
+    --primary:      $primary;
+    --secondary:    $secondary;
+    --accent2:      $accent2;
+    --accent:       $accent1;
+    --blend:        $blend;
+    --muted:        $muted;
+    --muted-light:  $muted-light;
+    --muted-pale:   $muted-pale;
+
+    --font-display: $font-display;
+    --font-sans:    $font-sans;
+    --font-mono:    $font-mono;
+
+    --section-pad:  $section-pad;
+    --gutter:       $gutter;
+    --max-w:        $max-w;
+}
 
 
 *, *::before, *::after {
@@ -51,6 +69,8 @@ body {
     overflow-x: hidden;
     cursor: none;
 }
+
+
 
 /* =============================================
     Custom Cursor
@@ -87,88 +107,30 @@ body {
 body:hover .cursor { opacity: 1; }
 
 
-// // progress circle bar
-// .progress-circle {
-// 	position: fixed;
-// 	inset: auto auto 1rem 1rem ;
-// 	width: 3rem;
-// 	height: 3rem;
-// 	z-index: 100;
-	
-// 	circle {
-// 		fill: none;
-// 		stroke: $muted-pale;
-// 		stroke-width: 0.475rem;
-// 		transform: rotate(-90deg);
-// 		transform-origin: 50% 50%;
-// 		stroke-dasharray: 251;
-// 		stroke-dashoffset: 251;
-// 		animation: progress-spin linear;
-// 		animation-timeline: scroll();
-//         mix-blend-mode: soft-light;
+/* FIXED SECTION COUNTER (bottom-right) */
 
-//     }
-// }
+.section-counter {
+    position: fixed;
+    inset: auto 1rem 1rem auto;
+    text-align: end;
+    z-index: 50;
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+}
 
+.sc-num {
+    display: block;
+    position: absolute;
+    font-family: $font-mono;
+    font-size: 3.5rem;
+    font-weight: 50;
+    line-height: 1;
+    color: $muted-pale;
+    mix-blend-mode: soft-light;
+}
 
-
-// @keyframes progress-spin {
-// 	to {
-// 		stroke-dashoffset: 0;
-// 	}
-// }
-
-
-
-
-
-/* =============================================
-    Navigation
-    ============================================= */
-
-// nav {
-//     position: fixed;
-//     top: 0; left: 0; right: 0;
-//     z-index: 100;
-//     padding: 1.75rem $gutter;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     // mix-blend-mode: luminosity;
-// }
-
-// .nav-logo {
-//     font-family: $font-mono;
-//     font-size: 0.75rem;
-//     letter-spacing: 0.12em;
-//     color: $muted;
-//     text-transform: uppercase;
-//     text-decoration: none;
-//     mix-blend-mode: luminosity;
-
-// }
-
-// .nav-links {
-//     display: flex;
-//     gap: 2rem;
-//     list-style: none;
-// }
-
-// .nav-links a {
-//     font-family: $font-mono;
-//     font-size: 0.7rem;
-//     letter-spacing: 0.12em;
-//     text-transform: uppercase;
-//     color: $muted;
-//     text-decoration: none;
-//     transition: color 0.2s ease;
-// }
-
-// .nav-links a:hover { 
-//     color: $accent;
-// }
-
-
+// LOGO
 .logo_long {
   position: fixed;
   top: 0; left: 0;
@@ -182,7 +144,7 @@ body:hover .cursor { opacity: 1; }
     justify-content: flex-start;
 }
 
-
+/* NAVIGATION */
 nav {
     position: fixed;
     top: 0; right: 0;
@@ -198,34 +160,10 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 52px;   // match or slightly larger than your button
+    width: 52px;
     height: 52px;
 }
 
-.progress-circle {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 600;
-    pointer-events: none;
-    transform: rotate(-90deg); // move rotation here from the circle
-
-    circle {
-        fill: none;
-        stroke: $accent;
-        stroke-width: 3;        // viewBox units, not px
-        stroke-dasharray: 251;
-        stroke-dashoffset: 251;
-        mix-blend-mode: normal;
-    }
-}
-
-@keyframes progress-spin {
-	to {
-		stroke-dashoffset: 0;
-	}
-}
 
 // Hamburger button
 .nav-hamburger {
@@ -236,36 +174,8 @@ nav {
     flex-direction: column;
     gap: 5px;
     padding: 0.5rem;
-    z-index: 600; // stays on top of overlay
+    z-index: 600;
 }
-
-// .ham-line {
-//     display: block;
-//     width: 28px;
-//     height: 3px;
-//     background: $muted-pale;
-//     transform-origin: center;
-//     transition: transform 0.4s ease, opacity 0.3s ease, width 0.3s ease;
-//     mix-blend-mode: soft-light;
-
-// }
-
-// // Animate into X when open
-
-// .nav-hamburger.is-open .ham-line {
-//     background: $primary;
-// }
-// .nav-hamburger.is-open .ham-line:nth-child(1) {
-//     transform: translateY(6.5px) rotate(45deg);
-// }
-// .nav-hamburger.is-open .ham-line:nth-child(2) {
-//     opacity: 0;
-//     width: 0;
-// }
-// .nav-hamburger.is-open .ham-line:nth-child(3) {
-//     transform: translateY(-6.5px) rotate(-45deg);
-// }
-
 
 .ham-line-1, .ham-line-2, .ham-line-3 {
     display: block;
@@ -301,18 +211,31 @@ nav {
 }
 
 
+// Progress Circle
+.progress-circle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 600;
+    pointer-events: none;
+    transform: rotate(-90deg); // move rotation here from the circle
 
+    circle {
+        fill: none;
+        stroke: $accent;
+        stroke-width: 3;        // viewBox units, not px
+        stroke-dasharray: 251;
+        stroke-dashoffset: 251;
+        mix-blend-mode: normal;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
+@keyframes progress-spin {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
 
 // Fullscreen overlay
 .nav-overlay {
@@ -373,7 +296,6 @@ nav {
 }
 
 
-
 /* =============================================
     HERO SECTION
     ============================================= */
@@ -393,11 +315,11 @@ nav {
     position: relative;
     overflow: hidden;
 
-    background-color: $primary;
-    $background-size: 8px;
-    $background-fill: $accent;
-    $background-opacity: 0.4; 
-    background-image: url('data:image/svg+xml,<svg width="#{$background-size}" height="#{$background-size}" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"><g fill="#{encode-color($background-fill)}" fill-opacity="#{$background-opacity}" fill-rule="evenodd"><path d="M5 0h1L0 6V5zM6 5v1H5z"/></g></svg>');
+    // background-color: $primary;
+    // $background-size: 8px;
+    // $background-fill: $accent;
+    // $background-opacity: 0.4; 
+    // background-image: url('data:image/svg+xml,<svg width="#{$background-size}" height="#{$background-size}" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"><g fill="#{encode-color($background-fill)}" fill-opacity="#{$background-opacity}" fill-rule="evenodd"><path d="M5 0h1L0 6V5zM6 5v1H5z"/></g></svg>');
 }
 
 .hero-eyebrow {
@@ -487,43 +409,6 @@ nav {
     100% { left: 100%; }
 }
 
-/* =============================================
-    FIXED SECTION COUNTER (bottom-right)
-    ============================================= */
-
-.section-counter {
-    position: fixed;
-    inset: auto 1rem 1rem auto;
-    text-align: end;
-    // bottom: 0;
-    // right: 0;
-    z-index: 50;
-    pointer-events: none;
-    user-select: none;
-    overflow: hidden;
-    /* Width/height sized to font — set by JS after load */
-}
-
-/* All 7 numbers absolutely stacked — GSAP scrub slides them. */
-.sc-num {
-    display: block;
-    position: absolute;
-    font-family: $font-mono;
-    font-size: 3.5rem;
-    font-weight: 50;
-    line-height: 1;
-    // padding-right: clamp(1.5rem, 5vw, 5rem);
-    // padding-bottom: 1rem;
-    color: $muted-pale;
-    mix-blend-mode: soft-light;
-
-    /* translateY controlled entirely by GSAP */
-}
-
-/* When over the dark skills section */
-.section-counter.on-dark .sc-num {
-    color: rgba(255, 255, 255, 0.06);
-}
 
 /* =============================================
     ABOUT / STORY SECTION
@@ -837,44 +722,6 @@ nav {
 }
 
 
-
-
-// .cert-list {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 0;
-// }
-
-// .cert-item {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     padding: 1.1rem 0;
-//     border-bottom: 1px solid $muted-pale;
-//     gap: 1rem;
-// }
-
-// .cert-name {
-//     font-family: $font-sans;
-//     font-size: 0.88rem;
-//     font-weight: 500;
-//     color: $secondary;
-// }
-
-// .cert-date {
-//     font-family: $font-mono;
-//     font-size: 0.65rem;
-//     color: $muted-light;
-//     white-space: nowrap;
-// }
-
-// .cert-badge {
-//     width: 8px; height: 8px;
-//     border-radius: 50%;
-//     background: $accent;
-//     flex-shrink: 0;
-// }
-
 /* =============================================
     SKILLS SECTION
     ============================================= */
@@ -889,15 +736,7 @@ nav {
     $background-fill:    $accent;
     $background-opacity: 1;
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$background-size}" height="#{$background-size}" viewBox="0 0 4 4"><path fill="#{encode-color($background-fill)}" fill-opacity="#{$background-opacity}" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"/></svg>');
-
-
-
-
-
 }
-
-
-
 
 #skills .section-label { color: $accent; }
 #skills .section-label::after { background: $accent; }
@@ -1070,12 +909,7 @@ nav {
     // $background-fill:    $accent;
     // $background-opacity: 0.95;
     // background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$background-size}" height="#{$background-size}" viewBox="0 0 4 4"><path fill="#{encode-color($background-fill)}" fill-opacity="#{$background-opacity}" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"/></svg>');
-
-
-
-
 }
-
 
 .contact-big {
     font-family: $font-display;
@@ -1092,8 +926,6 @@ nav {
         font-style: italic;
         color: $accent;
     }
-
-
 }
 
 .contact-small {
@@ -1131,8 +963,6 @@ nav {
         line-height: 1.6;
         opacity: 0;
     }
-
-
 }
 
 .contact-links {
@@ -1157,9 +987,6 @@ nav {
     height: 75px;
     align-items: center;
     justify-content: center;
-
-    
-
 }
  
 .contact-link-icon {
@@ -1211,13 +1038,9 @@ footer p {
     /* Hide custom cursor on touch devices */
     body { cursor: auto; }
     .cursor, .cursor-ring { display: none; }
-
     .projects-grid { grid-template-columns: 1fr; }
-
     .exp-intro { max-width: 100%; }
-
     .cert-block { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-
     .contact-small {
         flex-direction: column;
         align-items: flex-start;
@@ -1226,20 +1049,16 @@ footer p {
     .contact-thanks { max-width: 90vw; margin-top: 0; }
     .contact-big { max-width: 95vw; }
     .contact-links { gap: 2rem; margin-top: 3rem; }
-
     .sc-num { font-size: 1.75rem; }
     .section-counter { inset: auto 0.5rem 0.5rem auto; }
-
     .section-label { margin-bottom: 2.5rem; }
     .story-block { max-width: 95vw; }
-
     .overlay-link {
         font-size: clamp(2rem, 10vw, 3.5rem);
         gap: 0.75rem;
     }
 
     .exp-header { margin-bottom: 3rem; }
-
     .skills-grid { max-width: 95vw; }
     .skill-pill { font-size: 0.85rem; }
 }

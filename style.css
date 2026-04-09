@@ -1,5 +1,22 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400..800&family=Tulpen+One&display=swap");
+:root {
+  --primary: $primary;
+  --secondary: $secondary;
+  --accent2: $accent2;
+  --accent: $accent1;
+  --blend: $blend;
+  --muted: $muted;
+  --muted-light: $muted-light;
+  --muted-pale: $muted-pale;
+  --font-display: $font-display;
+  --font-sans: $font-sans;
+  --font-mono: $font-mono;
+  --section-pad: $section-pad;
+  --gutter: $gutter;
+  --max-w: $max-w;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -57,9 +74,30 @@ body:hover .cursor {
   opacity: 1;
 }
 
-/* =============================================
-    Navigation
-    ============================================= */
+/* FIXED SECTION COUNTER (bottom-right) */
+.section-counter {
+  position: fixed;
+  inset: auto 1rem 1rem auto;
+  text-align: end;
+  z-index: 50;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+}
+
+.sc-num {
+  display: block;
+  position: absolute;
+  font-family: "DM Mono", monospace;
+  font-size: 3.5rem;
+  font-weight: 50;
+  line-height: 1;
+  color: rgb(206.25, 206.25, 206.25);
+  mix-blend-mode: soft-light;
+}
+
 .logo_long {
   position: fixed;
   top: 0;
@@ -74,6 +112,7 @@ body:hover .cursor {
   justify-content: flex-start;
 }
 
+/* NAVIGATION */
 nav {
   position: fixed;
   top: 0;
@@ -94,29 +133,6 @@ nav {
   height: 52px;
 }
 
-.progress-circle {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 600;
-  pointer-events: none;
-  transform: rotate(-90deg);
-}
-.progress-circle circle {
-  fill: none;
-  stroke: rgb(255, 189, 89);
-  stroke-width: 3;
-  stroke-dasharray: 251;
-  stroke-dashoffset: 251;
-  mix-blend-mode: normal;
-}
-
-@keyframes progress-spin {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 .nav-hamburger {
   background: none;
   border: none;
@@ -165,6 +181,29 @@ nav {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
+.progress-circle {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 600;
+  pointer-events: none;
+  transform: rotate(-90deg);
+}
+.progress-circle circle {
+  fill: none;
+  stroke: rgb(255, 189, 89);
+  stroke-width: 3;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  mix-blend-mode: normal;
+}
+
+@keyframes progress-spin {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 .nav-overlay {
   position: fixed;
   inset: 0;
@@ -238,8 +277,6 @@ nav {
   padding: clamp(6rem, 12vw, 12rem) clamp(1.5rem, 5vw, 5rem);
   position: relative;
   overflow: hidden;
-  background-color: #f9f9fa;
-  background-image: url('data:image/svg+xml,<svg width="8px" height="8px" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"><g fill="rgb(255,189,89)" fill-opacity="0.4" fill-rule="evenodd"><path d="M5 0h1L0 6V5zM6 5v1H5z"/></g></svg>');
 }
 
 .hero-eyebrow {
@@ -334,40 +371,6 @@ nav {
     left: 100%;
   }
 }
-/* =============================================
-    FIXED SECTION COUNTER (bottom-right)
-    ============================================= */
-.section-counter {
-  position: fixed;
-  inset: auto 1rem 1rem auto;
-  text-align: end;
-  z-index: 50;
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  overflow: hidden;
-  /* Width/height sized to font — set by JS after load */
-}
-
-/* All 7 numbers absolutely stacked — GSAP scrub slides them. */
-.sc-num {
-  display: block;
-  position: absolute;
-  font-family: "DM Mono", monospace;
-  font-size: 3.5rem;
-  font-weight: 50;
-  line-height: 1;
-  color: rgb(206.25, 206.25, 206.25);
-  mix-blend-mode: soft-light;
-  /* translateY controlled entirely by GSAP */
-}
-
-/* When over the dark skills section */
-.section-counter.on-dark .sc-num {
-  color: rgba(255, 255, 255, 0.06);
-}
-
 /* =============================================
     ABOUT / STORY SECTION
     ============================================= */
