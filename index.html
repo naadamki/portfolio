@@ -62,6 +62,8 @@
 
   <!-- ==================== HERO ==================== -->
   <section id="hero" aria-label="Introduction">
+    <canvas id="network-canvas"></canvas>
+
     <p class="hero-eyebrow">Dallas, TX — Open to opportunities</p>
 
     <h1 class="hero-greeting">
@@ -182,7 +184,44 @@
         </div>
       </div>
 
-      <div class="edu-block">
+
+      <div>
+        <p class="cert-block-title">Certifications</p>
+        <div class="cert-block">
+          <div class="cert-card">
+            <img src="assets/CompTIAA+.png" alt="CompTIA A+" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;90&quot; height=&quot;90&quot; viewBox=&quot;0 0 90 90&quot;><rect width=&quot;90&quot; height=&quot;90&quot; rx=&quot;8&quot; fill=&quot;%23e8f0ff&quot;/><text y=&quot;52&quot; x=&quot;50%&quot; text-anchor=&quot;middle&quot; font-size=&quot;28&quot; fill=&quot;%230052cc&quot;>A+</text></svg>'"/>
+            <span class="cert-name">CompTIA A+</span>
+            <span class="cert-date">Dec 2023</span>
+          </div>
+          <div class="cert-card">
+            <img src="https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Cloud Practitioner" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;90&quot; height=&quot;90&quot; viewBox=&quot;0 0 90 90&quot;><rect width=&quot;90&quot; height=&quot;90&quot; rx=&quot;8&quot; fill=&quot;%23fff3e0&quot;/><text y=&quot;52&quot; x=&quot;50%&quot; text-anchor=&quot;middle&quot; font-size=&quot;14&quot; fill=&quot;%23f07200&quot;>AWS</text></svg>'"/>
+            <span class="cert-name">AWS Cloud Practitioner</span>
+            <span class="cert-date">Feb 2024</span>
+          </div>
+          <div class="cert-card">
+            <img src="https://images.credly.com/images/1d36cb36-20fc-4961-8d70-6307c015d1aa/blob" alt="LPI Linux Essentials" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;90&quot; height=&quot;90&quot; viewBox=&quot;0 0 90 90&quot;><rect width=&quot;90&quot; height=&quot;90&quot; rx=&quot;8&quot; fill=&quot;%23e8f5e9&quot;/><text y=&quot;52&quot; x=&quot;50%&quot; text-anchor=&quot;middle&quot; font-size=&quot;14&quot; fill=&quot;%23388e3c&quot;>LPI</text></svg>'"/>
+            <span class="cert-name">LPI Linux Essentials</span>
+            <span class="cert-date">Apr 2024</span>
+          </div>
+          <div class="cert-card">
+            <img src="https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="Azure Fundamentals" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;90&quot; height=&quot;90&quot; viewBox=&quot;0 0 90 90&quot;><rect width=&quot;90&quot; height=&quot;90&quot; rx=&quot;8&quot; fill=&quot;%23e3f2fd&quot;/><text y=&quot;52&quot; x=&quot;50%&quot; text-anchor=&quot;middle&quot; font-size=&quot;12&quot; fill=&quot;%230052cc&quot;>Azure</text></svg>'"/>
+            <span class="cert-name">Azure Fundamentals</span>
+            <span class="cert-date">Aug 2025</span>
+          </div>
+          <div class="cert-card">
+            <img src="https://images.credly.com/size/340x340/images/8b943c4b-c186-4e9f-84aa-004322b76eed/image.png" alt="ITIL 4 Foundation" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;90&quot; height=&quot;90&quot; viewBox=&quot;0 0 90 90&quot;><rect width=&quot;90&quot; height=&quot;90&quot; rx=&quot;8&quot; fill=&quot;%23f3e5f5&quot;/><text y=&quot;52&quot; x=&quot;50%&quot; text-anchor=&quot;middle&quot; font-size=&quot;14&quot; fill=&quot;%237b1fa2&quot;>ITIL4</text></svg>'"/>
+            <span class="cert-name">ITIL 4 Foundation</span>
+            <span class="cert-date">Jul 2025</span>
+          </div>
+          <div class="cert-card">
+            <img src="https://images.credly.com/size/340x340/images/e1fc05b2-959b-45a4-8d20-124b1df121fe/image.png" alt="CompTIA Network+" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;90&quot; height=&quot;90&quot; viewBox=&quot;0 0 90 90&quot;><rect width=&quot;90&quot; height=&quot;90&quot; rx=&quot;8&quot; fill=&quot;%23e8f0ff&quot;/><text y=&quot;52&quot; x=&quot;50%&quot; text-anchor=&quot;middle&quot; font-size=&quot;12&quot; fill=&quot;%230052cc&quot;>Net+</text></svg>'"/>
+            <span class="cert-name">CompTIA Network+</span>
+            <span class="cert-date">Apr 2026</span>
+          </div>
+
+        </div>  
+      </div>
+      <!-- <div class="edu-block">
         <p class="edu-block-title">Certifications</p>
         <div class="cert-list">
           <div class="cert-item">
@@ -216,7 +255,7 @@
             <span class="cert-date">Dec 2023</span>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </section>
@@ -588,6 +627,18 @@
       });
     });
 
+    // --- CERT ---
+    gsap.utils.toArray('.cert-block').forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 82%' },
+        delay: i * 0.2,
+      });
+    });
+
     // --- SKILLS ---
     gsap.to('#skills .section-title', {
       opacity: 1,
@@ -734,6 +785,100 @@
 
     window.addEventListener('resize', sizeCounter);
 
+    // ─── NETWORK CANVAS ───────────────────────────────────────────────
+    (function() {
+    const canvas = document.getElementById('network-canvas');
+    const ctx = canvas.getContext('2d');
+    let nodes = [], animFrame;
+    const NODE_COUNT = 60;
+    const CONNECT_DIST = 180;
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    function createNodes() {
+        nodes = [];
+        for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            r: Math.random() * 3 + 1.5,
+            pulse: Math.random() * Math.PI * 2,
+            highlight: Math.random() > 0.85
+        });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // subtle background gradient
+        const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        grad.addColorStop(0, '#fafafa');
+        grad.addColorStop(1, '#f8f9fb');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // update + draw connections
+        for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        a.x += a.vx; a.y += a.vy;
+        a.pulse += 0.025;
+        if (a.x < 0 || a.x > canvas.width) a.vx *= -1;
+        if (a.y < 0 || a.y > canvas.height) a.vy *= -1;
+
+        for (let j = i + 1; j < nodes.length; j++) {
+            const b = nodes[j];
+            const dx = a.x - b.x, dy = a.y - b.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < CONNECT_DIST) {
+            const alpha = (1 - dist / CONNECT_DIST) * 0.18;
+            const isHighlight = a.highlight || b.highlight;
+            ctx.strokeStyle = isHighlight
+                ? `rgba(80,150,54,${alpha * 2})`  
+                : `rgba(255,189,89,${alpha})`;
+            ctx.lineWidth = isHighlight ? 1.2 : 0.7;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+            }
+        }
+        }
+
+        // draw nodes
+        for (const n of nodes) {
+        const pulse = Math.sin(n.pulse) * 0.5 + 0.5;
+        if (n.highlight) {
+            // glow
+            const glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 6);
+            glow.addColorStop(0, `rgba(80,150,54,${0.35 * pulse})`);
+            glow.addColorStop(1, 'rgba(80,150,54,0)');
+            ctx.fillStyle = glow;
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r * 6, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = `rgba(80,150,54,${0.85 + 0.15 * pulse})`;
+        } else {
+            ctx.fillStyle = `rgba(255,189,89,${0.3 + 0.15 * pulse})`;
+        }
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fill();
+        }
+
+        animFrame = requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', () => { resize(); createNodes(); });
+    resize(); createNodes(); draw();
+    })();
+
+
+    
 
   </script>
 </body>
