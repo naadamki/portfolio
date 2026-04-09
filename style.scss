@@ -11,8 +11,8 @@
 
 $primary:      #f9f9fa;
 $secondary:    #424241;
-$accent:       rgb(80, 150, 54);
-$accent2:      rgb(255, 189, 89);
+$accent2:       rgb(80, 150, 54);
+$accent:      rgb(255, 189, 89);
 $blend:          color.mix($primary, $secondary, $weight: 95%);
 $muted:          color.mix($primary, $secondary, $weight: 50%);
 $muted-light:    color.scale($muted, $lightness: 25%);
@@ -168,6 +168,13 @@ body:hover .cursor { opacity: 1; }
 //     color: $accent;
 // }
 
+
+.logo {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 500;
+  padding: 1.75rem $gutter;
+}
 
 nav {
     position: fixed;
